@@ -24,7 +24,7 @@ const homeScreenNavigator = createBottomTabNavigator({
 
 const rootNavigator = createAnimatedSwitchNavigator(
     {
-        LoginNavigator: loginNavigator,
+        // LoginNavigator: loginNavigator,
         HomeScreenNavigator: homeScreenNavigator
     },
     {
