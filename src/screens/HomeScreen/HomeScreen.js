@@ -24,6 +24,21 @@ class HomeScreenComponent extends React.Component {
 
 
     componentDidMount = () => {
+        console.log('throttle', throttle);
+
+        setInterval(() => {
+            fetch('http://localhost:3000/location/getlocations', { method: "GET" }).then((response) => {
+                response.json().then((locations) => {
+                    console.log('locations api response', locations);
+                }).catch((error) => {
+                    console.log('getlocations error while parsing', JSON.stringify(error))
+                })
+            }).catch((error) => {
+                console.log('getlocations failed', JSON.stringify(error))
+            })
+
+        }, 3000);
+
         RNLocation.requestPermission({
             ios: "whenInUse",
             android: {
