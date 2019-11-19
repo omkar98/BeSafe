@@ -12,7 +12,6 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 
@@ -26,6 +25,9 @@ import {
 import firebase from 'react-native-firebase';
 import { notificationHandler } from './src/notificationHandler';
 import { RootComponent } from './src/navigation';
+import { mapping, light as lightTheme } from '@eva-design/eva';
+
+import { ApplicationProvider, Layout, Text } from 'react-native-ui-kitten';
 
 
 export const App = class App extends React.Component{
@@ -43,7 +45,10 @@ export const App = class App extends React.Component{
 
   render = ()=>{
     return (
-      <RootComponent/>
+      <ApplicationProvider mapping={mapping} theme={lightTheme}>
+        <RootComponent/>
+  </ApplicationProvider>
+
     )
   }
 }

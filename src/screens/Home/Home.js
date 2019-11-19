@@ -1,9 +1,15 @@
 
 
 import React from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
+import { View, Image, TouchableHighlight } from 'react-native';
 import RNLocation from 'react-native-location';
 import MapView, { Marker } from 'react-native-maps';
+import {
+    Button,
+    Input,
+    Text,
+    Icon
+} from 'react-native-ui-kitten';
 
 
 RNLocation.configure({
@@ -11,7 +17,7 @@ RNLocation.configure({
 })
 let mapStyle = [{ "elementType": "geometry", "stylers": [{ "color": "#242f3e" }] }, { "elementType": "labels.text.fill", "stylers": [{ "color": "#746855" }] }, { "elementType": "labels.text.stroke", "stylers": [{ "color": "#242f3e" }] }, { "featureType": "administrative.locality", "elementType": "labels.text.fill", "stylers": [{ "color": "#d59563" }] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#d59563" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#263c3f" }] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#6b9a76" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#38414e" }] }, { "featureType": "road", "elementType": "geometry.stroke", "stylers": [{ "color": "#212a37" }] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#9ca5b3" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#746855" }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#1f2835" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#f3d19c" }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#2f3948" }] }, { "featureType": "transit.station", "elementType": "labels.text.fill", "stylers": [{ "color": "#d59563" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#17263c" }] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#515c6d" }] }, { "featureType": "water", "elementType": "labels.text.stroke", "stylers": [{ "color": "#17263c" }] }];
 
-class HomeScreenComponent extends React.Component {
+class HomeComponent extends React.Component {
 
     state = {
         mylocation: null,
@@ -24,7 +30,6 @@ class HomeScreenComponent extends React.Component {
 
 
     componentDidMount = () => {
-        console.log('throttle', throttle);
 
         setInterval(() => {
             fetch('http://localhost:3000/location/getlocations', { method: "GET" }).then((response) => {
@@ -117,33 +122,31 @@ class HomeScreenComponent extends React.Component {
                 }
 
 
-                <TouchableHighlight style={{
+                <Button style={{
                     alignSelf: "center", position: 'absolute',
-                    bottom: 0, padding: 10, margin: 10, borderRadius: 40, borderWidth: 1, backgroundColor: "gray"
-                }} onPress={() => {
+                    bottom: 0, margin: 20
+                }}
 
-                    this.setState({
-                        nearByPeople: [
-                            {
-                                latitude: 18.53,
-                                longitude: 73.88
-                            },
-                            {
-                                latitude: 18.53,
-                                longitude: 73.88
-                            },
-                            {
-                                latitude: 18.53,
-                                longitude: 73.88
-                            }
-                        ]
-                    })
-                    // this.re();
+                    onPress={() => {
+                        this.setState({
+                            nearByPeople: [
+                                {
+                                    latitude: 18.53,
+                                    longitude: 73.88
+                                },
+                                {
+                                    latitude: 18.53,
+                                    longitude: 73.88
+                                },
+                                {
+                                    latitude: 18.53,
+                                    longitude: 73.88
+                                }
+                            ]
+                        })
+                    }} status='danger'>I am in trouble </Button>
 
-                }}>
-                    <Text >I am in trouble</Text>
 
-                </TouchableHighlight>
             </View>
 
 
@@ -151,4 +154,4 @@ class HomeScreenComponent extends React.Component {
     }
 }
 
-export const HomeScreen = HomeScreenComponent
+export const Home = HomeComponent

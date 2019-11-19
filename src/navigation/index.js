@@ -1,31 +1,67 @@
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Image, TouchableHighlight } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Login } from '../screens/Login/Login';
 import { SignUp } from '../screens/SignUp/SignUp';
-import { HomeScreen } from '../screens/HomeScreen/HomeScreen';
+import { Home } from '../screens/Home/Home';
 import { Profile } from '../screens/Profile/Profile';
+
+import { Icon} from 'react-native-ui-kitten';
 
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
 
 
 const loginNavigator = createStackNavigator({
-    Login,
-    SignUp
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            header: null
+        }
+    },
+    SignUp: {
+        screen: SignUp,
+        navigationOptions: {
+            header: null
+        }
+    }
 })
 
-const homeScreenNavigator = createBottomTabNavigator({
-    HomeScreen,
+const HomeNavigator = createBottomTabNavigator({
+    Home,
     Profile
-});
+}, {
+        defaultNavigationOptions: ({ navigation }) => ({
+            tabBarIcon: (props) => {
+                return <TabBarIconComponent {...props} navigation={navigation} />;
+            }
+        }),
+        tabBarOptions: {
+            activeTintColor: "#203354",
+            inactiveTintColor: "grey",
+        }
+    });
+
+const TabBarIconComponent = (props) => {
+    const routeName = props.navigation.state && props.navigation.state.routeName;
+    switch (routeName) {
+        case 'Home':
+                // return <Icon name="heart"/>
+            return <Image style={{ height:25, width:25, tintColor: props.tintColor }} source={require('../theme/icons/maps.png')} />;
+            case "Profile":
+                // return <Icon name="heart"/>
+                return <Image style={{ height:25, width:25,  tintColor: props.tintColor }} source={require('../theme/icons/profile.png')} />;
+                
+            // return <Image style={{ tintColor: props.tintColor }} source={require('../theme/icons/tabbar/access.png')} />;
+    }
+}
 
 const rootNavigator = createAnimatedSwitchNavigator(
     {
         // LoginNavigator: loginNavigator,
-        HomeScreenNavigator: homeScreenNavigator
+        HomeNavigator: HomeNavigator
     },
     {
         transition: (
