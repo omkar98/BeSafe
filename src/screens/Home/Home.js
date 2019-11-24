@@ -28,11 +28,10 @@ class HomeComponent extends React.Component {
         }
     }
 
-
+// localhost port: Sangamesh: 3000 | Omkar: 8081
     componentDidMount = () => {
-
         setInterval(() => {
-            fetch('http://localhost:3000/location/getlocations', { method: "GET" }).then((response) => {
+            fetch('http://localhost:8081/location/getlocations', { method: "GET" }).then((response) => {
                 response.json().then((locations) => {
                     console.log('locations api response', locations);
                 }).catch((error) => {
@@ -145,8 +144,6 @@ class HomeComponent extends React.Component {
                             ]
                         })
                     }} status='danger'>I am in trouble </Button>
-
-
             </View>
 
 

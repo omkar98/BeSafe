@@ -47,15 +47,14 @@ export const App = class App extends React.Component{
     return (
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
         <RootComponent/>
-  </ApplicationProvider>
-
+      </ApplicationProvider>
     )
   }
 }
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    backgroundColor: Colors.darker,
   },
   engine: {
     position: 'absolute',

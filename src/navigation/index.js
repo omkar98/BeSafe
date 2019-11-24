@@ -7,6 +7,7 @@ import { Login } from '../screens/Login/Login';
 import { SignUp } from '../screens/SignUp/SignUp';
 import { Home } from '../screens/Home/Home';
 import { Profile } from '../screens/Profile/Profile';
+import { HelpedOthers as Help } from '../screens/HelpedOthers/helpedOthers';
 
 import { Icon} from 'react-native-ui-kitten';
 
@@ -31,6 +32,7 @@ const loginNavigator = createStackNavigator({
 
 const HomeNavigator = createBottomTabNavigator({
     Home,
+    Help,
     Profile
 }, {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -50,10 +52,14 @@ const TabBarIconComponent = (props) => {
         case 'Home':
                 // return <Icon name="heart"/>
             return <Image style={{ height:25, width:25, tintColor: props.tintColor }} source={require('../theme/icons/maps.png')} />;
-            case "Profile":
+        case "Profile":
                 // return <Icon name="heart"/>
-                return <Image style={{ height:25, width:25,  tintColor: props.tintColor }} source={require('../theme/icons/profile.png')} />;
-                
+        return <Image style={{ height:25, width:25,  tintColor: props.tintColor }} source={require('../theme/icons/profile.png')} />;
+        case "Help":
+                // return <Icon name="heart"/>
+        return <Image style={{ height:25, width:25,  tintColor: props.tintColor }} source={require('../theme/icons/emergency.jpg')} />;
+
+
             // return <Image style={{ tintColor: props.tintColor }} source={require('../theme/icons/tabbar/access.png')} />;
     }
 }

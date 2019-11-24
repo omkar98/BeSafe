@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { View, TouchableHighlight, Image } from 'react-native';
 
@@ -20,15 +18,12 @@ class SignUpComponent extends React.Component {
         return (
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center", marginHorizontal: 20 }}>
 
-                <Image style={{ height: 50, width: 50, marginBottom: 5 }} source={require('../../theme/icons/sih.png')} />
+                <Image style={{ height: 50, width: 50, marginBottom: 5 }} source={require('../../theme/icons/scb.png')} />
 
-
-                <View style={{ margin: 5, justifyContent: "center", alignItems: "center" }}>
-                    <Text category='h1'>Be Safe</Text>
-                    <Text category='h6'>Make india safer, Together!</Text>
-
+                <View style={{ margin: 10, justifyContent: "center", alignItems: "center"}}>
+                    <Text category='h1' style={{color:'black', letterSpacing: 5}}>BE-SAFE</Text>
+                    <Text category='h6' style={{color: 'black', fontStyle: 'italic'}}>Let's make India Safe, <Text category='h6' style={{ color:'black', textDecorationLine:'underline'}}>Together!</Text> </Text>
                 </View>
-
 
                 <Input
                     style={{ marginBottom: 10 }}
