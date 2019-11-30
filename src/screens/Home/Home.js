@@ -23,22 +23,23 @@ class HomeComponent extends React.Component {
         mylocation: null,
         nearByPeople: [],
         delta: {
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+            latitudeDelta: 0.0000,
+            longitudeDelta: 0.000,
         }
     }
 
 // localhost port: Sangamesh: 3000 | Omkar: 8081
     componentDidMount = () => {
         setInterval(() => {
-            fetch('http://localhost:8081/location/getlocations', { method: "GET" }).then((response) => {
+            fetch('http://localhost:3000/location/getlocations', { method: "GET" }).then((response) => {
                 response.json().then((locations) => {
                     console.log('locations api response', locations);
                 }).catch((error) => {
                     console.log('getlocations error while parsing', JSON.stringify(error))
                 })
             }).catch((error) => {
-                console.log('getlocations failed', JSON.stringify(error))
+                console.log('getlocations failed', JSON.stringify(error));
+                console.log('we are here');
             })
 
         }, 3000);
@@ -99,8 +100,8 @@ class HomeComponent extends React.Component {
                                         draggable
                                         coordinate={{ ...nearByPerson }}
                                         onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
-                                        title={'Test Marker'}
-                                        description={'This is a description of the marker'}
+                                        title={'You'}
+                                        description={'This is your location'}
                                     >
                                         <View style={{ backgroundColor: "transparent" }}>
                                             <Image style={{ height: 60, width: 60 }} source={require('../../theme/icons/mario.png')} />
@@ -113,8 +114,8 @@ class HomeComponent extends React.Component {
                             draggable
                             coordinate={{ ...this.state.mylocation }}
                             onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
-                            title={'Test Marker'}
-                            description={'This is a description of the marker'}
+                            title={'You'}
+                            description={'This is your location'}
                         />
                     </MapView>
 
@@ -130,16 +131,16 @@ class HomeComponent extends React.Component {
                         this.setState({
                             nearByPeople: [
                                 {
-                                    latitude: 18.53,
-                                    longitude: 73.88
+                                    latitude: 23.26700000,
+                                    longitude: 77.36003900
                                 },
                                 {
-                                    latitude: 18.53,
-                                    longitude: 73.88
+                                    latitude: 23.26700900,
+                                    longitude: 77.36858900
                                 },
                                 {
-                                    latitude: 18.53,
-                                    longitude: 73.88
+                                    latitude: 23.26700100,
+                                    longitude: 77.36412900
                                 }
                             ]
                         })

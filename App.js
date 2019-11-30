@@ -15,6 +15,9 @@ import {
   StatusBar,
 } from 'react-native';
 
+// import {applyMiddleware} from 'redux';
+// import ReduxThunk from 'redux-thunk';
+
 import {
   Header,
   LearnMoreLinks,

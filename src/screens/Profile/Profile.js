@@ -41,6 +41,7 @@ class ProfileComponent extends React.Component {
 
             </View>
             <View ><Text category='label' style={{textAlign: 'center', padding: 10, backgroundColor: '#91C740'}}>This App is designed and developed for Bhopal Smart City Hackthon 2.0 by Team Arcana.</Text></View>
+
           </View>
         )
     }

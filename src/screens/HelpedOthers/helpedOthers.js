@@ -22,36 +22,12 @@ class HelpedOthersComponent extends React.Component {
               <Text category='h4' style={{color:'white', marginTop:5}}>  Emergency Requests</Text>
             </View>
 
+
             <View style={styles.applyShadow}>
               <View style={styles.eachRequest}>
                 <Image style={{  width:50, height: 50}} source={require('../../theme/icons/user.png')} />
                 <View style={styles.middleContent}>
                   <Text style={{fontWeight:'bold'}}>Omkar Deshpande</Text>
-                  <Text style={{fontStyle:'italic'}}>"Chain Snatching Case"</Text>
-                </View>
-                <View style={styles.sideContent}>
-                  <View style={styles.sideDistanceContent}>
-                    <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/maps.png')} />
-                    <Text>122m away</Text>
-                  </View>
-                  <View style={styles.sideTimeContent}>
-                    <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/time.png')} />
-                    <Text style={{fontStyle:'italic'}}>12 mins ago</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={styles.bottomContent}>
-                <View style={{flexDirection:'row', justifyContent:'center'}}>
-                  <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/resolved.jpg')} />
-                  <Text>Resolved by Shivani Vaidya</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.applyShadow}>
-              <View style={styles.eachRequest}>
-                <Image style={{  width:50, height: 50}} source={require('../../theme/icons/user.png')} />
-                <View style={styles.middleContent}>
-                  <Text style={{fontWeight:'bold'}}>Sangamesh Somawar</Text>
                   <Text style={{fontStyle:'italic'}}>"Public Fight"</Text>
                 </View>
                 <View style={styles.sideContent}>
@@ -97,7 +73,7 @@ class HelpedOthersComponent extends React.Component {
                 </View>
               </View>
             </View>
-          
+
             <View style={styles.applyShadow}>
               <View style={styles.eachRequest}>
                 <Image style={{  width:50, height: 50}} source={require('../../theme/icons/user.png')} />
