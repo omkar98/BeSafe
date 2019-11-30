@@ -25,7 +25,7 @@ class ProfileComponent extends React.Component {
                 <Text category='h1'>Profile</Text>
                 <View style={{ margin: 10, justifyContent: "center", alignItems: "center" }}>
                     <Text category='h6' style={{fontWeight:'bold'}}>Name:</Text>
-                    <Text category='h6' style={{fontStyle: 'italic'}}>Sangamesh Somawar</Text>
+                    <Text category='h6' style={{fontStyle: 'italic'}}>Nikhil Thakare</Text>
                 </View>
                 <View style={{ margin: 10, justifyContent: "center", alignItems: "center" }}>
                     <Text category='h6' style={{fontWeight:'bold'}}>Phone Number:</Text>

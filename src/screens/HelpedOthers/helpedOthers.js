@@ -97,31 +97,7 @@ class HelpedOthersComponent extends React.Component {
                 </View>
               </View>
             </View>
-            <View style={styles.applyShadow}>
-              <View style={styles.eachRequest}>
-                <Image style={{  width:50, height: 50}} source={require('../../theme/icons/user.png')} />
-                <View style={styles.middleContent}>
-                  <Text style={{fontWeight:'bold'}}>Rahul Singh Bisen</Text>
-                  <Text style={{fontStyle:'italic'}}>"No Maharahtrian Food at Sathyabama"</Text>
-                </View>
-                <View style={styles.sideContent}>
-                  <View style={styles.sideDistanceContent}>
-                    <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/maps.png')} />
-                    <Text> 5 km away</Text>
-                  </View>
-                  <View style={styles.sideTimeContent}>
-                    <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/time.png')} />
-                    <Text style={{fontStyle:'italic'}}> 5 days ago</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={styles.bottomContent}>
-                <View style={{flexDirection:'row', justifyContent:'center'}}>
-                  <Image style={{ height: 20, width: 20, marginTop:0}} source={require('../../theme/icons/resolved.jpg')} />
-                  <Text>Resolved by Sathyabama Authority</Text>
-                </View>
-              </View>
-            </View>
+          
             <View style={styles.applyShadow}>
               <View style={styles.eachRequest}>
                 <Image style={{  width:50, height: 50}} source={require('../../theme/icons/user.png')} />
